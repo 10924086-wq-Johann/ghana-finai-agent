@@ -9,7 +9,9 @@ import sys
 import asyncio
 import socketio
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+backend_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(backend_dir)
+sys.path.extend([root_dir, backend_dir])
 load_dotenv()
 
 from scraper.news_scraper import (
